@@ -1,0 +1,2 @@
+fullname,phone,nid,address,amount,username,password,package_name,pop_name,area_name,router_id,create_date,expire_date
+John Doe,1234567890,1234567890123,123 Elm St,100,johndoe,password,package_name,pop_name,area_name,1,2025-12-31,2025-12-31

@@ -1,0 +1,12 @@
+[05-Sep-2026 10:37:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function status_header() in /home/nexusclo/public_html/payment.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/nexusclo/public_html/payment.php on line 18
+[05-Sep-2026 10:37:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function status_header() in /home/nexusclo/public_html/payment.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/nexusclo/public_html/payment.php on line 18
+[05-Sep-2026 10:45:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function status_header() in /home/nexusclo/public_html/payment.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/nexusclo/public_html/payment.php on line 18
