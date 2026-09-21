@@ -114,46 +114,6 @@ class AdminController extends Controller
         ]);
     }
 
-    public function api_login(Request $request)
-    {
-        // return response()->json([
-        //     'method' => $request->method(),
-        //     'data'   => $request->all(),
-        //     'headers' => $request->headers->all(),
-        // ]);
-        $request->validate([
-            'login'    => 'required|string', // username or email
-            'password' => 'required|string',
-        ]);
-
-        $login = $request->input('login');
-        $password = $request->input('password');
-
-        $admin = Admin::where('email', $login)
-                    ->orWhere('username', $login)
-                    ->first();
-
-        if (! $admin || ! Hash::check($password, $admin->password)) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
-        }
-
-        // Create token for API access
-        $token = $admin->createToken('admin-api-token')->plainTextToken;
-
-        return response()->json([
-            'message' => 'Login successful',
-            'admin' => $admin,
-            'token' => $token
-        ]);
-    }
-    public function api_logout(Request $request)
-    {
-        $request->user()->currentAccessToken()->delete();
-
-        return response()->json([
-            'message' => 'Logout successful',
-        ]);
-    }
     public function logout(){
         $sessionId = session()->getId();
 
