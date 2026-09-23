@@ -10,7 +10,8 @@ use RouterOS\Client;
 use RouterOS\Query;
 use function App\Helpers\formate_uptime;
 use Illuminate\Support\Facades\Auth;
-
+// Frontend Controllers
+use App\Http\Controllers\Frontend\HomeController;
 /*Backend Route*/
 
 Route::get('/admin/login', [AdminController::class, 'login_form'])->name('admin.login');
@@ -19,7 +20,7 @@ Route::post('login-functionality', [AdminController::class, 'login_functionality
 
 Route::group(['middleware' => 'admin'], function () {
 
-    Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
     /*----------- User Management  Route ----------*/
@@ -33,8 +34,12 @@ Route::group(['middleware' => 'admin'], function () {
         return view('test');
     });
 });
-Route::get('/optimize', function () {
-    Artisan::call('optimize:clear');
-    return 'Optimize Clear Completed';
-});
 
+/*-----------Frontend Route-------------*/
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    // Route::get('/about', 'about')->name('about');
+    // Route::get('/services', 'services')->name('services');
+    // Route::get('/contact', 'contact')->name('contact');
+    // Route::post('/demo-request', 'storeDemoRequest')->name('demo.request.store');
+});
