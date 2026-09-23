@@ -1,14 +1,3 @@
-@php
-
-    $prefix = Request::route()->getPrefix();
-    $route = Route::current()->getname();
-    $currentRoute = Route::currentRouteName();
-    $branch_user_id = Auth::guard('admin')->user()->pop_id ?? null;
-@endphp
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -187,7 +176,7 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
+                <div class="container-fluid" id="main-content">
                     @yield('content')
                 </div><!-- /.container-fluid -->
             </section>
@@ -207,6 +196,7 @@
     @include('Backend.Include.Script')
     <script type="text/javascript">
     </script>
+    
 </body>
 
 </html>

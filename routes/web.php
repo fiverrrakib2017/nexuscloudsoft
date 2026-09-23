@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\Admin\LoginLogController;
 use App\Http\Controllers\Backend\HeroController;
 use Illuminate\Support\Facades\Artisan;
@@ -38,6 +39,22 @@ Route::group(['middleware' => 'admin'], function () {
             Route::get('/index', 'index')->name('admin.about_section.index');
             Route::post('/about-section/update', 'update')->name('admin.about.update');
         });        
+    });
+    /*-----------Values / Why Choose Us Routes ----------*/
+    Route::prefix('admin/values-section')->group(function () {
+        Route::controller(ValueController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.values.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.values.header.update');
+            Route::get('/get-cards', 'getCards')->name('admin.values.cards.get');
+            Route::post('/card-store', 'storeCard')->name('admin.values.card.store');
+            Route::get('/card-edit/{id}', 'editCard')->name('admin.values.card.edit');
+            Route::post('/card-update/{id}', 'updateCard')->name('admin.values.card.update');
+            Route::delete('/card-delete/{id}', 'deleteCard')->name('admin.values.card.delete');
+        });        
+    });
+    // 
+    Route::prefix('values-section')->name('values.')->controller(ValueController::class)->group(function () {
+        
     });
     Route::get('/test',function(){
         return view('test');

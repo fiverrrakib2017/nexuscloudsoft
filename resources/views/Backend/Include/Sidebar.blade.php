@@ -56,10 +56,11 @@
                         <p>About Us Section</p>
                     </a>
                 </li>
+                
 
                 <!-- Why Choose Us / Values -->
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('admin.values.index')}}" class="nav-link {{ request()->routeIs('admin.values.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-shield-alt text-success"></i>
                         <p>Why Choose Us</p>
                     </a>
