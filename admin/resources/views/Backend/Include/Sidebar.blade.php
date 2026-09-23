@@ -43,7 +43,7 @@
 
                 <!-- Hero Section -->
                 <li class="nav-item">
-                    <a href="" class="nav-link ">
+                    <a href="{{route('admin.hero_section.index')}}" class="nav-link {{ request()->routeIs('admin.hero_section.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-star text-warning"></i>
                         <p>Hero Section</p>
                     </a>

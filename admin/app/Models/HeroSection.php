@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Olt_mac_table extends Model
+class HeroSection extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'olt_id',
-        'mac_address',
-        'vlan',
-        'port',
-        'type',
-        'last_seen'
+        'title',
+        'subtitle',
+        'btn_text',
+        'btn_url',
+        'video_url',
+        'image'
     ];
 }
