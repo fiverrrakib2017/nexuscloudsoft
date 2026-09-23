@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\Admin\LoginLogController;
 use App\Http\Controllers\Backend\HeroController;
@@ -23,11 +25,18 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-    /*----------- User Management  Route ----------*/
+    /*----------- Hero Section Management  Route ----------*/
     Route::prefix('admin/hero-section')->group(function () {
         Route::controller(HeroController::class)->group(function () {
             Route::get('/index', 'index')->name('admin.hero_section.index');
             Route::post('/hero-section/update', 'update')->name('admin.hero.update');
+        });        
+    });
+    /*----------- About Section Management  Route ----------*/
+    Route::prefix('admin/about-section')->group(function () {
+        Route::controller(AboutController::class)->group(function () {
+            Route::get('/index', 'index')->name('admin.about_section.index');
+            Route::post('/about-section/update', 'update')->name('admin.about.update');
         });        
     });
     Route::get('/test',function(){

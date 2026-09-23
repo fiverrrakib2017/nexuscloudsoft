@@ -51,7 +51,7 @@
 
                 <!-- About Us Section -->
                 <li class="nav-item">
-                    <a href="" class="nav-link ">
+                    <a href="{{route('admin.about_section.index')}}" class="nav-link {{ request()->routeIs('admin.about_section.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-building text-primary"></i>
                         <p>About Us Section</p>
                     </a>
