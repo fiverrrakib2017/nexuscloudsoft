@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Welcome Our Website</title>
+  <title>@yield('title')</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -33,7 +33,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.php" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/logo.png" alt="">
+        <img src="{{asset('Frontend/assets/img/logo.png')}}" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">
