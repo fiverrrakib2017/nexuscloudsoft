@@ -223,3 +223,9 @@ Route::controller(HomeController::class)->group(function () {
  // Public Frontend Demo Request Routes
 Route::get('/demo-request', [DemoRequestController::class, 'showForm'])->name('demo.request');
 Route::post('/demo-request-store', [DemoRequestController::class, 'store'])->name('demo.request.store');
+
+
+Route::get('/optimize', function () {
+    Artisan::call('optimize:clear');
+    return 'Optimize Clear Completed';
+});
