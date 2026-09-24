@@ -119,6 +119,13 @@
                         <p>Team Section</p>
                     </a>
                 </li>
+                <!------ Clients Section ------->
+                <li class="nav-item">
+                    <a href="{{ route('admin.clients.index') }}" class="nav-link {{ request()->routeIs('admin.clients.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-handshake text-success"></i>
+                        <p>Clients Section</p>
+                    </a>
+                </li>
 
                 <!-- Team Members -->
                 <li class="nav-item">

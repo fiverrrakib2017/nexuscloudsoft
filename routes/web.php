@@ -4,7 +4,7 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\ServiceController;
-use App\Http\Controllers\Backend\Admin\LoginLogController;
+use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\StatController;
 use App\Http\Controllers\Backend\FeatureController;
@@ -153,6 +153,18 @@ Route::group(['middleware' => 'admin'], function () {
             Route::get('/item-edit/{id}', 'editItem')->name('admin.team.item.edit');
             Route::post('/item-update/{id}', 'updateItem')->name('admin.team.item.update');
             Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.team.item.delete');
+        });        
+    });
+    /*-----------Clients Section Routes----------*/
+    Route::prefix('admin/clients-section')->group(function () {
+        Route::controller(ClientController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.clients.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.clients.header.update');
+            Route::get('/get-items', 'getItems')->name('admin.clients.items.get');
+            Route::post('/item-store', 'storeItem')->name('admin.clients.item.store');
+            Route::get('/item-edit/{id}', 'editItem')->name('admin.clients.item.edit');
+            Route::post('/item-update/{id}', 'updateItem')->name('admin.clients.item.update');
+            Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.clients.item.delete');
         });        
     });
     
