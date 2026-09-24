@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\Admin\LoginLogController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\StatController;
+use App\Http\Controllers\Backend\FeatureController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,18 @@ Route::group(['middleware' => 'admin'], function () {
             Route::get('/edit/{id}', 'edit')->name('admin.stats.edit');
             Route::post('/update/{id}', 'update')->name('admin.stats.update');
             Route::delete('/delete/{id}', 'delete')->name('admin.stats.delete');
+        });        
+    });
+    /*-----------Features Section Routes ----------*/
+    Route::prefix('admin/features-section')->group(function () {
+        Route::controller(FeatureController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.features.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.features.header.update');
+            Route::get('/get-items', 'getItems')->name('admin.features.items.get');
+            Route::post('/item-store', 'storeItem')->name('admin.features.item.store');
+            Route::get('/item-edit/{id}', 'editItem')->name('admin.features.item.edit');
+            Route::post('/item-update/{id}', 'updateItem')->name('admin.features.item.update');
+            Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.features.item.delete');
         });        
     });
    

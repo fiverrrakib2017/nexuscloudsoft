@@ -71,12 +71,18 @@
                         <p>Counter Stats</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.features.index') }}" class="nav-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-check-square text-success"></i>
+                        <p>Features Section</p>
+                    </a>
+                </li>
 
-                <!-- Features & Solutions -->
+                <!--Solutions -->
                 <li class="nav-item">
                     <a href="" class="nav-link ">
                         <i class="nav-icon fas fa-cogs text-info"></i>
-                        <p>Features & Solutions</p>
+                        <p>Solutions</p>
                     </a>
                 </li>
 

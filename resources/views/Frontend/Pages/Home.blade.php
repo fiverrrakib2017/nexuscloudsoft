@@ -16,89 +16,7 @@
     @include('Frontend.Component.Stats_section');
 
     <!-- Features Section -->
-    <section id="features" class="features section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-          <h2>Why Choose Us</h2>
-          <p>Powerful ISP Billing & Network Management Features</p>
-      </div>
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-xl-6" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/features.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-6 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>Automated Customer Billing</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>MikroTik API Integration</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>Radius Authentication Support</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>OLT & ONU Monitoring</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>Online Payment Gateway</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>SMS & Email Notifications</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>Multi-Tenant Architecture</h3>
-                  </div>
-              </div>
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="900">
-                  <div class="feature-box d-flex align-items-center">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h3>Real-Time Dashboard & Reports</h3>
-                  </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Features Section -->
+     @include('Frontend.Component.Features_section');
 
     <!-- Alt Features Section -->
     <section id="alt-features" class="alt-features section">
@@ -168,7 +86,7 @@
                 <div class="col-xl-5 d-flex align-items-center order-1 order-xl-2"
                     data-aos="fade-up"
                     data-aos-delay="100">
-                    <img src="assets/img/alt-features.png" class="img-fluid" alt="ISP Billing Dashboard">
+                    <img src="{{asset('Frontend/assets/img/alt-features.png')}}" class="img-fluid" alt="ISP Billing Dashboard">
                 </div>
 
             </div>
