@@ -141,23 +141,10 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.demo_requests.index') }}" class="nav-link {{ request()->routeIs('admin.demo_requests.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-desktop text-primary"></i>
+                        <i class="nav-icon fas fa-desktop text-light"></i>
                         <p>Demo Requests</p>
                     </a>
                 </li>
-
-                <!-- Demo Requests / Leads -->
-                <li class="nav-item">
-                    <a href="" class="nav-link ">
-                        <i class="nav-icon fas fa-inbox text-teal"></i>
-                        <p>
-                            Demo Requests
-                            <span class="right badge badge-danger">5 New</span>
-                        </p>
-                    </a>
-                </li>
-
-                
 
             </ul>
         </nav>

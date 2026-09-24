@@ -81,6 +81,26 @@
                     </div>
                     @error('name') <span class="text-rose-500 text-xs mt-1 block">{{ $message }}</span> @enderror
                 </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">আনমানিক ইউজার সংখ্যা</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                            <i class="fas fa-users text-sm"></i>
+                        </span>
+                        <select name="user_count" 
+                            class="w-full pl-10 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:border-indigo-500 focus:bg-white transition appearance-none">
+                            <option value="">-- ইউজার সংখ্যা নির্বাচন করুন --</option>
+                            <option value="1 - 200 Users" {{ old('user_count') == '1 - 200 Users' ? 'selected' : '' }}>১ - ২০০ ইউজার</option>
+                            <option value="200 - 500 Users" {{ old('user_count') == '200 - 500 Users' ? 'selected' : '' }}>২০০ - ৫০০ ইউজার</option>
+                            <option value="500 - 1000 Users" {{ old('user_count') == '500 - 1000 Users' ? 'selected' : '' }}>৫০০ - ১০০০ ইউজার</option>
+                            <option value="1000+ Users" {{ old('user_count') == '1000+ Users' ? 'selected' : '' }}>১০০০+ ইউজার</option>
+                        </select>
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-slate-400">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </div>
+                    @error('user_count') <span class="text-rose-500 text-xs mt-1 block">{{ $message }}</span> @enderror
+                </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
