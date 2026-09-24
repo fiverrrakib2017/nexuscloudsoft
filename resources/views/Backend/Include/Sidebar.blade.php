@@ -112,6 +112,13 @@
                         <p>Testimonials Section</p>
                     </a>
                 </li>
+                <!------ Team Section ------->
+                <li class="nav-item">
+                    <a href="{{ route('admin.team.index') }}" class="nav-link {{ request()->routeIs('admin.team.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users text-primary"></i>
+                        <p>Team Section</p>
+                    </a>
+                </li>
 
                 <!-- Team Members -->
                 <li class="nav-item">

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\AltFeatureController;
 use App\Http\Controllers\Backend\PricingController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\Backend\TeamController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -142,6 +143,19 @@ Route::group(['middleware' => 'admin'], function () {
             Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.testimonials.item.delete');
         });        
     });
+    /*-----------Team Section Routes----------*/
+    Route::prefix('admin/team-section')->group(function () {
+        Route::controller(TeamController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.team.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.team.header.update');
+            Route::get('/get-items', 'getItems')->name('admin.team.items.get');
+            Route::post('/item-store', 'storeItem')->name('admin.team.item.store');
+            Route::get('/item-edit/{id}', 'editItem')->name('admin.team.item.edit');
+            Route::post('/item-update/{id}', 'updateItem')->name('admin.team.item.update');
+            Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.team.item.delete');
+        });        
+    });
+    
    
    
     Route::get('/test',function(){
