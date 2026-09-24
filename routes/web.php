@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\StatController;
 use App\Http\Controllers\Backend\FeatureController;
 use App\Http\Controllers\Backend\AltFeatureController;
 use App\Http\Controllers\Backend\PricingController;
+use App\Http\Controllers\Backend\FaqController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -116,7 +117,18 @@ Route::group(['middleware' => 'admin'], function () {
             Route::delete('/plan-delete/{id}', 'deletePlan')->name('admin.pricing.plan.delete');
         });        
     });
-    
+    /*-----------FAQ Section Routes ----------*/
+    Route::prefix('admin/faq-section')->group(function () {
+        Route::controller(FaqController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.faq.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.faq.header.update');
+            Route::get('/get-items', 'getItems')->name('admin.faq.items.get');
+            Route::post('/item-store', 'storeItem')->name('admin.faq.item.store');
+            Route::get('/item-edit/{id}', 'editItem')->name('admin.faq.item.edit');
+            Route::post('/item-update/{id}', 'updateItem')->name('admin.faq.item.update');
+            Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.faq.item.delete');
+        });        
+    });
    
    
     Route::get('/test',function(){

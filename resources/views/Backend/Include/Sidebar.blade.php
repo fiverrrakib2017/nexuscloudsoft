@@ -98,6 +98,13 @@
                         <p>Pricing Section</p>
                     </a>
                 </li>
+                 <!------ FAQ Section ------->
+                <li class="nav-item">
+                    <a href="{{ route('admin.faq.index') }}" class="nav-link {{ request()->routeIs('admin.faq.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-question-circle text-warning"></i>
+                        <p>FAQ Section</p>
+                    </a>
+                </li>
 
                 <!-- Team Members -->
                 <li class="nav-item">
