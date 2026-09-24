@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\FooterController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -177,7 +178,20 @@ Route::group(['middleware' => 'admin'], function () {
             Route::delete('/message-delete/{id}', 'deleteMessage')->name('admin.contact.message.delete');
         });        
     });
-   
+    /*-----------Footer Section Routes----------*/
+    Route::prefix('admin/footer-section')->group(function () {
+        Route::controller(FooterController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.footer.index');
+            Route::post('/setting-update', 'updateSetting')->name('admin.footer.setting.update');
+        
+            // Solutions CRUD Routes
+            Route::get('/get-solutions', 'getSolutions')->name('admin.footer.solutions.get');
+            Route::post('/solution-store', 'storeSolution')->name('admin.footer.solution.store');
+            Route::get('/solution-edit/{id}', 'editSolution')->name('admin.footer.solution.edit');
+            Route::post('/solution-update/{id}', 'updateSolution')->name('admin.footer.solution.update');
+            Route::delete('/solution-delete/{id}', 'deleteSolution')->name('admin.footer.solution.delete');
+        });        
+    }); 
     
    
    

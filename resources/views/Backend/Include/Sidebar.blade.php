@@ -133,7 +133,12 @@
                         <p>Contact Section</p>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="{{ route('admin.footer.index') }}" class="nav-link {{ request()->routeIs('admin.footer.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-shoe-prints text-light"></i>
+                        <p>Footer Section</p>
+                    </a>
+                </li>
 
                 <!-- Section Divider: LEADS & SYSTEM -->
                 <div class="section-divider">
