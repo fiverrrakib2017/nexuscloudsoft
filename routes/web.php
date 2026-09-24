@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\FeatureController;
 use App\Http\Controllers\Backend\AltFeatureController;
 use App\Http\Controllers\Backend\PricingController;
 use App\Http\Controllers\Backend\FaqController;
+use App\Http\Controllers\Backend\TestimonialController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -127,6 +128,18 @@ Route::group(['middleware' => 'admin'], function () {
             Route::get('/item-edit/{id}', 'editItem')->name('admin.faq.item.edit');
             Route::post('/item-update/{id}', 'updateItem')->name('admin.faq.item.update');
             Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.faq.item.delete');
+        });        
+    });
+    /*-----------Testimonials Section Routes ----------*/
+    Route::prefix('admin/testimonials-section')->group(function () {
+        Route::controller(TestimonialController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.testimonials.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.testimonials.header.update');
+            Route::get('/get-items', 'getItems')->name('admin.testimonials.items.get');
+            Route::post('/item-store', 'storeItem')->name('admin.testimonials.item.store');
+            Route::get('/item-edit/{id}', 'editItem')->name('admin.testimonials.item.edit');
+            Route::post('/item-update/{id}', 'updateItem')->name('admin.testimonials.item.update');
+            Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.testimonials.item.delete');
         });        
     });
    

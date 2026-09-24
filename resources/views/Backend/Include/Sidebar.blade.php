@@ -105,6 +105,13 @@
                         <p>FAQ Section</p>
                     </a>
                 </li>
+                 <!------ Testimonials Section ------->
+                <li class="nav-item">
+                    <a href="{{ route('admin.testimonials.index') }}" class="nav-link {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-comment-dots text-primary"></i>
+                        <p>Testimonials Section</p>
+                    </a>
+                </li>
 
                 <!-- Team Members -->
                 <li class="nav-item">
