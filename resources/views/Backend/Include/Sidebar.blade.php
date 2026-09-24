@@ -83,14 +83,13 @@
                         <p>Alt Features Section</p>
                     </a>
                 </li>
-
-                <!--Solutions -->
                 <li class="nav-item">
-                    <a href="" class="nav-link ">
-                        <i class="nav-icon fas fa-cogs text-info"></i>
-                        <p>Solutions</p>
+                    <a href="{{ route('admin.services.index') }}" class="nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-concierge-bell text-warning"></i>
+                        <p>Our Services Solution</p>
                     </a>
                 </li>
+
 
                 <!-- Pricing Plans -->
                 <li class="nav-item">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ValueController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\Admin\LoginLogController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\StatController;
@@ -88,6 +89,18 @@ Route::group(['middleware' => 'admin'], function () {
             Route::get('/item-edit/{id}', 'editItem')->name('admin.alt_features.item.edit');
             Route::post('/item-update/{id}', 'updateItem')->name('admin.alt_features.item.update');
             Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.alt_features.item.delete');
+        });        
+    });
+    /*-----------Services Section Routes ----------*/
+    Route::prefix('admin/services-section')->group(function () {
+        Route::controller(ServiceController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.services.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.services.header.update');
+            Route::get('/get-items', 'getItems')->name('admin.services.items.get');
+            Route::post('/item-store', 'storeItem')->name('admin.services.item.store');
+            Route::get('/item-edit/{id}', 'editItem')->name('admin.services.item.edit');
+            Route::post('/item-update/{id}', 'updateItem')->name('admin.services.item.update');
+            Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.services.item.delete');
         });        
     });
     
