@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\Admin\LoginLogController;
 use App\Http\Controllers\Backend\HeroController;
+use App\Http\Controllers\Backend\StatController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -52,10 +53,19 @@ Route::group(['middleware' => 'admin'], function () {
             Route::delete('/card-delete/{id}', 'deleteCard')->name('admin.values.card.delete');
         });        
     });
-    // 
-    Route::prefix('values-section')->name('values.')->controller(ValueController::class)->group(function () {
-        
+    /*-----------Stats Section Routes ----------*/
+    Route::prefix('admin/stats-section')->group(function () {
+        Route::controller(StatController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.stats.index');
+            Route::get('/get-stats', 'getStats')->name('admin.stats.get');
+            Route::post('/store', 'store')->name('admin.stats.store');
+            Route::get('/edit/{id}', 'edit')->name('admin.stats.edit');
+            Route::post('/update/{id}', 'update')->name('admin.stats.update');
+            Route::delete('/delete/{id}', 'delete')->name('admin.stats.delete');
+        });        
     });
+   
+   
     Route::get('/test',function(){
         return view('test');
     });

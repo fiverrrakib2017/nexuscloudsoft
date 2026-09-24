@@ -65,6 +65,12 @@
                         <p>Why Choose Us</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.stats.index') }}" class="nav-link {{ request()->routeIs('admin.stats.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-chart-line text-info"></i>
+                        <p>Counter Stats</p>
+                    </a>
+                </li>
 
                 <!-- Features & Solutions -->
                 <li class="nav-item">
