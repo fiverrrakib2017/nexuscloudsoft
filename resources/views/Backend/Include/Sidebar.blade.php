@@ -77,6 +77,12 @@
                         <p>Features Section</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.alt_features.index') }}" class="nav-link {{ request()->routeIs('admin.alt_features.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cubes text-info"></i>
+                        <p>Alt Features Section</p>
+                    </a>
+                </li>
 
                 <!--Solutions -->
                 <li class="nav-item">
