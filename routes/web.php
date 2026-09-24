@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\FooterController;
+use App\Http\Controllers\Backend\DemoRequestController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -192,6 +193,16 @@ Route::group(['middleware' => 'admin'], function () {
             Route::delete('/solution-delete/{id}', 'deleteSolution')->name('admin.footer.solution.delete');
         });        
     }); 
+    /*-----------Admin Panel Demo Request Management Routes----------*/
+    Route::prefix('admin/demo-requests')->group(function () {
+        Route::controller(DemoRequestController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.demo_requests.index');
+            Route::get('/get-data', 'getData')->name('admin.demo_requests.get.data');
+            Route::post('/status-update/{id}', 'updateStatus')->name('admin.demo_requests.status.update');
+            Route::delete('/delete/{id}', 'delete')->name('admin.demo_requests.delete');
+        });        
+    }); 
+
     
    
    
@@ -209,3 +220,6 @@ Route::controller(HomeController::class)->group(function () {
     // Route::post('/demo-request', 'storeDemoRequest')->name('demo.request.store');
 });
  Route::post('/contact-send', [ContactController::class, 'sendMessage'])->name('contact.send');
+ // Public Frontend Demo Request Routes
+Route::get('/demo-request', [DemoRequestController::class, 'showForm'])->name('demo.request');
+Route::post('/demo-request-store', [DemoRequestController::class, 'store'])->name('demo.request.store');

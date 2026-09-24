@@ -47,7 +47,8 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Demo request</a>
+      <!-- Demo Request Button Linked -->
+      <a class="btn-getstarted flex-md-shrink-0" href="{{ route('demo.request') }}">Demo request</a>
 
     </div>
   </header>
@@ -71,7 +72,7 @@
 
 <!-- Main JS File -->
 <script src="{{ asset('Frontend/assets/js/main.js') }}"></script>
-
+@yield('script')
 </body>
 
 </html>

@@ -139,11 +139,12 @@
                         <p>Footer Section</p>
                     </a>
                 </li>
-
-                <!-- Section Divider: LEADS & SYSTEM -->
-                <div class="section-divider">
-                    <span>Leads & Settings</span>
-                </div>
+                <li class="nav-item">
+                    <a href="{{ route('admin.demo_requests.index') }}" class="nav-link {{ request()->routeIs('admin.demo_requests.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-desktop text-primary"></i>
+                        <p>Demo Requests</p>
+                    </a>
+                </li>
 
                 <!-- Demo Requests / Leads -->
                 <li class="nav-item">
@@ -156,13 +157,7 @@
                     </a>
                 </li>
 
-                <!-- General & SEO Settings -->
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-sliders-h text-secondary"></i>
-                        <p>Logo & SEO Settings</p>
-                    </a>
-                </li>
+                
 
             </ul>
         </nav>
