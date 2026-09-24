@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\PricingController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\ContactController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -167,6 +168,16 @@ Route::group(['middleware' => 'admin'], function () {
             Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.clients.item.delete');
         });        
     });
+    /*-----------Contact Section Routes----------*/
+    Route::prefix('admin/contact-section')->group(function () {
+        Route::controller(ContactController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.contact.index');
+            Route::post('/setting-update', 'updateSetting')->name('admin.contact.setting.update');
+            Route::get('/get-messages', 'getMessages')->name('admin.contact.messages.get');
+            Route::delete('/message-delete/{id}', 'deleteMessage')->name('admin.contact.message.delete');
+        });        
+    });
+   
     
    
    
@@ -183,3 +194,4 @@ Route::controller(HomeController::class)->group(function () {
     // Route::get('/contact', 'contact')->name('contact');
     // Route::post('/demo-request', 'storeDemoRequest')->name('demo.request.store');
 });
+ Route::post('/contact-send', [ContactController::class, 'sendMessage'])->name('contact.send');

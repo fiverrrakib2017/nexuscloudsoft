@@ -31,7 +31,7 @@
                 <!-- Main Dashboard -->
                 <li class="nav-item">
                     <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt text-info"></i>
+                        <i class="nav-icon fas fa-tachometer-alt text-light"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
@@ -44,7 +44,7 @@
                 <!-- Hero Section -->
                 <li class="nav-item">
                     <a href="{{route('admin.hero_section.index')}}" class="nav-link {{ request()->routeIs('admin.hero_section.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-star text-warning"></i>
+                        <i class="nav-icon fas fa-star text-light"></i>
                         <p>Hero Section</p>
                     </a>
                 </li>
@@ -52,7 +52,7 @@
                 <!-- About Us Section -->
                 <li class="nav-item">
                     <a href="{{route('admin.about_section.index')}}" class="nav-link {{ request()->routeIs('admin.about_section.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-building text-primary"></i>
+                        <i class="nav-icon fas fa-building text-light"></i>
                         <p>About Us Section</p>
                     </a>
                 </li>
@@ -61,31 +61,31 @@
                 <!-- Why Choose Us / Values -->
                 <li class="nav-item">
                     <a href="{{route('admin.values.index')}}" class="nav-link {{ request()->routeIs('admin.values.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-shield-alt text-success"></i>
+                        <i class="nav-icon fas fa-shield-alt text-light"></i>
                         <p>Why Choose Us</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.stats.index') }}" class="nav-link {{ request()->routeIs('admin.stats.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-chart-line text-info"></i>
+                        <i class="nav-icon fas fa-chart-line text-light"></i>
                         <p>Counter Stats</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.features.index') }}" class="nav-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-check-square text-success"></i>
+                        <i class="nav-icon fas fa-check-square text-light"></i>
                         <p>Features Section</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.alt_features.index') }}" class="nav-link {{ request()->routeIs('admin.alt_features.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-cubes text-info"></i>
+                        <i class="nav-icon fas fa-cubes text-light"></i>
                         <p>Alt Features Section</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.services.index') }}" class="nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-concierge-bell text-warning"></i>
+                        <i class="nav-icon fas fa-concierge-bell text-light"></i>
                         <p>Our Services Solution</p>
                     </a>
                 </li>
@@ -94,54 +94,46 @@
                 <!-- Pricing Plans -->
                 <li class="nav-item">
                     <a href="{{ route('admin.pricing.index') }}" class="nav-link {{ request()->routeIs('admin.pricing.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tags text-success"></i>
+                        <i class="nav-icon fas fa-tags text-light"></i>
                         <p>Pricing Section</p>
                     </a>
                 </li>
                  <!------ FAQ Section ------->
                 <li class="nav-item">
                     <a href="{{ route('admin.faq.index') }}" class="nav-link {{ request()->routeIs('admin.faq.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-question-circle text-warning"></i>
+                        <i class="nav-icon fas fa-question-circle text-light"></i>
                         <p>FAQ Section</p>
                     </a>
                 </li>
                  <!------ Testimonials Section ------->
                 <li class="nav-item">
                     <a href="{{ route('admin.testimonials.index') }}" class="nav-link {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-comment-dots text-primary"></i>
+                        <i class="nav-icon fas fa-comment-dots text-light"></i>
                         <p>Testimonials Section</p>
                     </a>
                 </li>
                 <!------ Team Section ------->
                 <li class="nav-item">
                     <a href="{{ route('admin.team.index') }}" class="nav-link {{ request()->routeIs('admin.team.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users text-primary"></i>
-                        <p>Team Section</p>
+                          <i class="nav-icon fas fa-users text-light"></i>
+                        <p>Team Members</p>
                     </a>
                 </li>
                 <!------ Clients Section ------->
                 <li class="nav-item">
                     <a href="{{ route('admin.clients.index') }}" class="nav-link {{ request()->routeIs('admin.clients.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-handshake text-success"></i>
+                        <i class="nav-icon fas fa-handshake text-light"></i>
                         <p>Clients Section</p>
                     </a>
                 </li>
-
-                <!-- Team Members -->
+                 <!-- Contact & Footer Settings -->
                 <li class="nav-item">
-                    <a href="" class="nav-link ">
-                        <i class="nav-icon fas fa-users text-light"></i>
-                        <p>Team Members</p>
+                    <a href="{{ route('admin.contact.index') }}" class="nav-link {{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-envelope text-light"></i>
+                        <p>Contact Section</p>
                     </a>
                 </li>
 
-                <!-- Contact & Footer Settings -->
-                <li class="nav-item">
-                    <a href="" class="nav-link ">
-                        <i class="nav-icon fas fa-address-book text-warning"></i>
-                        <p>Contact & Footer</p>
-                    </a>
-                </li>
 
                 <!-- Section Divider: LEADS & SYSTEM -->
                 <div class="section-divider">
