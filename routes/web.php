@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\StatController;
 use App\Http\Controllers\Backend\FeatureController;
 use App\Http\Controllers\Backend\AltFeatureController;
+use App\Http\Controllers\Backend\PricingController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -101,6 +102,18 @@ Route::group(['middleware' => 'admin'], function () {
             Route::get('/item-edit/{id}', 'editItem')->name('admin.services.item.edit');
             Route::post('/item-update/{id}', 'updateItem')->name('admin.services.item.update');
             Route::delete('/item-delete/{id}', 'deleteItem')->name('admin.services.item.delete');
+        });        
+    });
+    /*-----------Pricing Section Routes ----------*/
+    Route::prefix('admin/pricing-section')->group(function () {
+        Route::controller(PricingController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.pricing.index');
+            Route::post('/header-update', 'updateHeader')->name('admin.pricing.header.update');
+            Route::get('/get-plans', 'getPlans')->name('admin.pricing.plans.get');
+            Route::post('/plan-store', 'storePlan')->name('admin.pricing.plan.store');
+            Route::get('/plan-edit/{id}', 'editPlan')->name('admin.pricing.plan.edit');
+            Route::post('/plan-update/{id}', 'updatePlan')->name('admin.pricing.plan.update');
+            Route::delete('/plan-delete/{id}', 'deletePlan')->name('admin.pricing.plan.delete');
         });        
     });
     

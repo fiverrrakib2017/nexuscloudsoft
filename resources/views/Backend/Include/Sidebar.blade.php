@@ -93,9 +93,9 @@
 
                 <!-- Pricing Plans -->
                 <li class="nav-item">
-                    <a href="" class="nav-link ">
-                        <i class="nav-icon fas fa-tags text-danger"></i>
-                        <p>Pricing Packages</p>
+                    <a href="{{ route('admin.pricing.index') }}" class="nav-link {{ request()->routeIs('admin.pricing.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tags text-success"></i>
+                        <p>Pricing Section</p>
                     </a>
                 </li>
 
